@@ -38,7 +38,7 @@ def password_gen(length, minnum, special):
 def main():
     parser = argparse.ArgumentParser(
         description="Generate strong Passwords.")
-    parser.add_argument("--Length", "-L", type=int, help="Length of Password. Default(24)", default=24)
+    parser.add_argument("--Length", "-L", type=int, help="Length of Password. Default(24)", default=64)
     parser.add_argument("--Numbers", "-N", type=int, help="Least amount of numbers in the password. Default(3)", default=3)
     parser.add_argument("--Special", "-S", type=int, help="Least amount of special characters in the password. Default(3)", default=3)
     args = parser.parse_args()
