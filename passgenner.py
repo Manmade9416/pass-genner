@@ -1,4 +1,5 @@
 import argparse
+from errors_passgenner import *
 import random
 import secrets
 import string
@@ -6,10 +7,14 @@ import string
 def password_gen(length, minnum, special):
     """ Generate Strong Passwords."""
     # Prevent minnum + special >= length
-    if length <= 3:
-        raise ValueError("Password length too short.")
-    if minnum + special >= length:
-        raise ValueError("Total minimum requirements exceed password length.")
+    if length <= 5:
+        raise PasswordTooShortError("Password length too short.")
+    if minnum + special > length:
+        raise RulesExceedPasswordLengthError(
+            "Total minimum requirements exceed password length."
+            )
+    if length > 256:
+        raise PasswordTooLongError("Password length is too long.")
     
     # Character pools
     letters = string.ascii_letters
@@ -83,9 +88,16 @@ def main():
     N = args.Numbers
     S = args.Special
     
-    print(f"> {password_gen(L, N, S)}")
-    
+    # Raise errors described in password_gen() if caught
+    try:
+        passwd = password_gen(L, N, S)
+        print(f"> {passwd}")
+    except PasswordTooShortError:
+        print("Password length too short.")
+    except PasswordTooLongError:
+        print("Password length is too long.")
+    except RulesExceedPasswordLengthError:
+        print("Total minimum requirements exceed password length.")
+
 if __name__ == "__main__":
     main()
-    
-    
