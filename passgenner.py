@@ -6,7 +6,8 @@ import string
 
 def password_gen(length, minnum, special):
     """ Generate Strong Passwords."""
-    # Prevent minnum + special >= length
+    
+    # Raise errors if args do not meet requirements
     if length <= 5:
         raise PasswordTooShortError("Password length too short.")
     if minnum + special > length:

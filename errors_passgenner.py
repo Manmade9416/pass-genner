@@ -1,3 +1,5 @@
+""" Custom Errors """
+
 class PasswordTooShortError(ValueError):
     pass
 class RulesExceedPasswordLengthError(ValueError):
