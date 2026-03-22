@@ -17,12 +17,14 @@ def password_gen(length, minnum, special):
     password_chars = []
     
     # Numbers to satisfy minnum 
-    for i in range(minnum):
-        password_chars.append(secrets.choice(amanumber))
+    if minnum > 0: 
+        for i in range(minnum):
+            password_chars.append(secrets.choice(amanumber))
     
     # Special chars to satisfy special
-    for i in range(special):
-        password_chars.append(secrets.choice(amaspecial))
+    if special > 0:
+        for i in range(special):
+            password_chars.append(secrets.choice(amaspecial))
     
     # Fill remaining length of the password
     remaining = length - minnum - special
@@ -46,11 +48,8 @@ def main():
     L = args.Length
     N = args.Numbers
     S = args.Special
-    print("\n")
-    print("-"*L)
-    print(password_gen(L, N, S))
-    print("-"*L)
-    print("\n")
+    
+    print(f"> {password_gen(L, N, S)}")
     
 if __name__ == "__main__":
     main()
