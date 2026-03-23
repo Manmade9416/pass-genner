@@ -24,7 +24,7 @@ python passgenner.py -L 256
 ```
 
 #### Username generator
-_Note! The username generator depends on the size of the **wordlist** file/files being large enough to generate many unique usernames without repeating, I am working on making the word lists as large as I possibly can_
+>_Note! The username generator depends on the size of the **wordlist** file/files being large enough to generate many unique usernames without repeating, I am working on making the word lists as large as I possibly can_
 
 generate username
 ```
