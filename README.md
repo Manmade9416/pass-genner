@@ -1,4 +1,5 @@
-# Pass-genner Tool
+# Pass-Genner Tool
+![Pass-genner logo](assets/1774287080382.jpg)
 
 Tools to generate strong unique passwords and unique usernames.
 
@@ -17,7 +18,7 @@ python passgenner.py -L 6 -N 6 -S 0
 > 429666
 ```
 
-generate a longest password
+generate the longest password
 ```
 python passgenner.py -L 256
 > %,Q+AZgmk5?`YZ]>U~aT9B:-[>2D$~t"Tc';.}[N]9\}1IPT'$.WSzGx&#.zgwBO$]eKST0_YvsP\>Fl~L?q7tW\tcc!>,E}`j-$-#&IECJB!Z6/#{yC~ZCdde,V,-C=2[=n`c^r3(=v397(=ta`*6MRDVAl%pZTx;Qeu8b_}aCR',SAe!(i`MUJ_l?.`,n1+x{Bx}PgBGr0HOpR-c:_"FnktY1azvNM8,)_78QOY*6u{"]k3`$20QVi(sd[A|R-
@@ -34,4 +35,8 @@ python username.py
 python username.py
 > Your username is leila_mirei687
 ```
-
+generate username without numbers
+```
+python usename.py --NoNumbers
+> Your username is Mcomputerate_maya
+```
