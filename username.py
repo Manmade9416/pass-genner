@@ -7,7 +7,8 @@ def generate_username():
     Example: "Quantum_Viper42"
     """
     username_chars = []
-    nums = ''.join(secrets.choice(string.digits) for i in range(3))
+    numslen = secrets.choice([3, 4, 5]) # Random choice to have 3, 4 or 5 nums in username
+    nums = ''.join(secrets.choice(string.digits) for i in range(numslen))
     username_chars.append(nums)
     
     with open("words.txt", "r", encoding="utf-8") as f:
